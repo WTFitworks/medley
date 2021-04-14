@@ -15,18 +15,16 @@ jobs:
     runs-on: ${{ matrix.os }}
     
     steps:
-      - name: Checkout medly
+    
       - uses: actions/checkout@master
-         with:
+        with:
           repository: masinter/medly
           path: ./medly
-
-      
-      - name: Checkout maiko
-        uses: actions/checkout@master
+          
+      - uses: actions/checkout@master
         with:
-          repository: masinter/maiko
-          path: ./maiko
+         repository: masinter/maiko
+         path: ./maiko
           
       - name: Install X11 dependencies on MacOS
         if: ${{ runner.os == 'macOS'}}
