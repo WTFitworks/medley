@@ -18,7 +18,7 @@ jobs:
     
       - uses: actions/checkout@master
         with:
-          repository: masinter/medly
+          repository: masinter/medley
           path: ./medly
           
       - uses: actions/checkout@master
