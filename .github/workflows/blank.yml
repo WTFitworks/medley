@@ -16,12 +16,21 @@ jobs:
     
     steps:
       - uses: actions/checkout@v2
+      - name: Check maiko
+        uses: actions/checkout@master
+        with:
+          repository: masinter/maiko
+          token: ${{ secrets.my_pat }}
       - name: Install X11 dependencies on MacOS
         if: ${{ runner.os == 'macOS'}}
         run: brew install --cask xquartz
       - name: Build
         working-directory: bin
         run: ./makeright x
+        
+        
+        
+        
   
       - name: Deploy Windows release
         if: matrix.os == 'windows-latest'
