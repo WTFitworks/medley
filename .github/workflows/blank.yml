@@ -21,7 +21,7 @@ jobs:
       - name: Build
         working-directory: bin
         run: ./makeright x
-build-pi:
+  build-pi:
     runs-on: [self-hosted, linux, ARM]
     if: ${{ github.repository == 'Interlisp/maiko' }}
     steps:
