@@ -29,9 +29,9 @@ jobs:
       - name: Install X11 dependencies on MacOS
         if: ${{ runner.os == 'macOS'}}
         run: brew install --cask xquartz
-      - name: Install X11 dependencies on MacOS
-        if: ${{ runner.os == 'ubuntu'}}
-        run:  apt-get install xorg openbox
+      - name: Install X11 dependencies on Linux
+        if: ${{ runner.os == 'ubuntu-18.04'}}
+        run:  sudo apt-get install xorg openbox
       - name: Show Working directory
         run: ls
       - name: Build Maiko
