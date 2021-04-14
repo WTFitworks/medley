@@ -36,11 +36,11 @@ jobs:
         working-directory: maiko/bin
         run: ./makeright x
       - name: Build Maiko
-        #working-directory: bin
-        run: ./maiko/bin/makeright init
+        working-directory: maiko/bin
+        run: ./makeright init
       - name: Build medley
-        #working-directory: medley
-        run: ./medley/scripts/loadup-all.sh   
+        working-directory: medley
+        run: ./scripts/loadup-all.sh   
         
 
         
