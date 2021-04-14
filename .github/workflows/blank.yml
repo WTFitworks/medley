@@ -26,6 +26,12 @@ jobs:
       - name: Build
         working-directory: bin
         run: ./makeright x
+      - name: Build
+        working-directory: bin
+        run: ./makeright init
+        
+        
+
         
         
         
