@@ -1,0 +1,23 @@
+name: Deploy Nightly
+on:
+  schedule:
+    - cron: '0 2 * * *' # run at 2 AM UTC
+  branches-ignore:
+    - master
+
+jobs:
+  nightly:
+    name: Deploy nightly
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [macos-10.15, ubuntu-18.04]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install X11 dependencies on MacOS
+        if: ${{ runner.os == 'macOS'}}
+        run: brew install --cask xquartz
+      - name: Build
+        working-directory: bin
+        run: ./makeright x
