@@ -40,6 +40,9 @@ jobs:
       - name: Build Maiko
         working-directory: maiko/bin
         run: ./makeright init
+      - name: set env
+        working-directory: medley
+        run: export DISPLAY=:0.0
       - name: Build medley
         working-directory: medley
         run: ./scripts/loadup-all.sh   
