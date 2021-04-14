@@ -30,6 +30,7 @@ jobs:
         working-directory: bin
         run: ./makeright init
       - name: Build medley
+        working-directory: medley
         run: ./scripts/loadup-all.sh   
         
 
