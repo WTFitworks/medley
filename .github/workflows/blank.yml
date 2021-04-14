@@ -30,14 +30,14 @@ jobs:
         if: ${{ runner.os == 'macOS'}}
         run: brew install --cask xquartz
       - name: Build Maiko
-        working-directory: bin
-        run: ./makeright x
+        #working-directory: bin
+        run: ./maiko/bin/makeright x
       - name: Build Maiko
-        working-directory: bin
-        run: ./makeright init
+        #working-directory: bin
+        run: ./maiko/bin/makeright init
       - name: Build medley
-        working-directory: medley
-        run: ./scripts/loadup-all.sh   
+        #working-directory: medley
+        run: ./medley/scripts/loadup-all.sh   
         
 
         
