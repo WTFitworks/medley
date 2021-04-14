@@ -23,13 +23,14 @@ jobs:
       - name: Install X11 dependencies on MacOS
         if: ${{ runner.os == 'macOS'}}
         run: brew install --cask xquartz
-      - name: Build
+      - name: Build Maiko
         working-directory: bin
         run: ./makeright x
-      - name: Build
+      - name: Build Maiko
         working-directory: bin
         run: ./makeright init
-        
+      - name: Build medley
+        run: ./scripts/loadup-all.sh   
         
 
         
