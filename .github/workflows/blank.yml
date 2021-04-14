@@ -43,6 +43,9 @@ jobs:
       - name: set env
         working-directory: medley
         run: export DISPLAY=:0.0
+      - name: run medley
+        working-directory: medley
+        run: ./run-medley 
       - name: Build medley
         working-directory: medley
         run: ./scripts/loadup-all.sh   
