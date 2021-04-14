@@ -42,7 +42,7 @@ jobs:
         run: ./makeright init
       - name: set env
         working-directory: medley
-        run: export DISPLAY :0.0
+        run: export DISPLAY=:0
       - name: run medley
         working-directory: medley
         run: ./run-medley 
