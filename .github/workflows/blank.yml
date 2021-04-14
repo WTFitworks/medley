@@ -2,8 +2,7 @@ name: Deploy Nightly
 on:
   schedule:
     - cron: '0 2 * * *' # run at 2 AM UTC
-  branches-ignore:
-    - master
+
 
 jobs:
   nightly:
