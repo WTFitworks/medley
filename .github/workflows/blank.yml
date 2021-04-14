@@ -1,7 +1,7 @@
 name: Deploy Nightly
 on:
   schedule:
-    - cron: '0 2 * * *' # run at 2 AM UTC
+    - cron: '0 12 8 * *' # run at 2 AM UTC
 
 
 jobs:
