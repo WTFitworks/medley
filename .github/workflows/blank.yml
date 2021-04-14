@@ -33,7 +33,7 @@ jobs:
       - name: Show Working directory
         run: ls
       - name: Build Maiko
-        working-directory: /maiko/bin
+        working-directory: maiko/bin
         run: ./makeright x
       - name: Build Maiko
         #working-directory: bin
