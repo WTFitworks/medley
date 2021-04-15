@@ -28,7 +28,7 @@ jobs:
           
       - name: Install X11 dependencies on MacOS
         if: ${{ runner.os == 'macOS'}}
-        run: brew install --cask xquartz
+        run: brew install xquartz --cask
       - name: Install X11 dependencies on Linux
         if: ${{ runner.os == 'Linux'}}
         run:  sudo apt-get install xorg openbox xauth
