@@ -28,7 +28,7 @@ jobs:
           
       - name: Install X11 dependencies on MacOS
         if: ${{ runner.os == 'macOS'}}
-        run: brew install xquartz --cask
+        run: brew install xterm --cask
       - name: Install X11 dependencies on Linux
         if: ${{ runner.os == 'Linux'}}
         run:  sudo apt-get install xorg openbox xauth
@@ -37,7 +37,7 @@ jobs:
       - name: Show Working directory
         run: echo $DISPLAY
       - name: set env
-        run: launchctl unload -w /Library/LaunchAgents/org.xquartz.startx.plist
+        run: xterm -geometry 93x31+100+350
       - name: Build Maiko
         working-directory: maiko/bin
         run: ./makeright x
