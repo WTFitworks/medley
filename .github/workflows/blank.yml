@@ -28,7 +28,7 @@ jobs:
           
       - name: Install X11 dependencies on MacOS
         if: ${{ runner.os == 'macOS'}}
-        run: brew install xterm --cask
+        run: brew install xterm
       - name: Install X11 dependencies on Linux
         if: ${{ runner.os == 'Linux'}}
         run:  sudo apt-get install xorg openbox xauth
