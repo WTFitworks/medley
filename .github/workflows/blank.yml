@@ -34,6 +34,8 @@ jobs:
         run:  sudo apt-get install xorg openbox xauth
       - name: Show Working directory
         run: ls /Library/LaunchAgents/
+      - name: Show Working directory
+        run: echo $DISPLAY
       - name: set env
         run: launchctl unload -w /Library/LaunchAgents/org.xquartz.startx.plist
       - name: Build Maiko
