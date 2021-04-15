@@ -41,7 +41,6 @@ jobs:
         working-directory: maiko/bin
         run: ./makeright init
       - name: set env
-        working-directory: medley
         run: launchctl unload -w /Library/LaunchAgents/org.xquartz.startx.plist
       - name: run medley
         working-directory: medley
