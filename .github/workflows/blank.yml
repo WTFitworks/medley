@@ -42,7 +42,7 @@ jobs:
         run: ./makeright init
       - name: set env
         working-directory: medley
-        run: launchctl unload -w /Library/LaunchAgents/org.macosforge.xquartz.startx.plist
+        run: launchctl unload -w /Library/LaunchAgents/org.xquartz.startx.plist
       - name: run medley
         working-directory: medley
         run: ./run-medley 
