@@ -33,7 +33,7 @@ jobs:
         if: ${{ runner.os == 'Linux'}}
         run:  |
           echo "A initial message"
-          sudo apt-get install xorg openbox xauth xvfb
+          sudo apt-get install xserver-xorg-core openbox xauth xvfb
            echo "A initial message"
           export DISPLAY=':99.0'
            echo "A initial message"
