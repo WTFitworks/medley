@@ -31,7 +31,13 @@ jobs:
         run: brew install xterm
       - name: Install X11 dependencies on Linux
         if: ${{ runner.os == 'Linux'}}
-        run:  sudo apt-get install xorg openbox xauth
+        run:  |
+          echo "A initial message"
+          sudo apt-get install xorg openbox xauth xvfb
+           echo "A initial message"
+          export DISPLAY=':99.0'
+           echo "A initial message"
+          Xvfb :99 -screen 0 1024x768x24 > /dev/null 2>&1 &
       - name: Show Working directory
         run: ls /Library/LaunchAgents/
       - name: Show Working directory
