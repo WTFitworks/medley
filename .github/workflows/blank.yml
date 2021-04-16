@@ -58,6 +58,7 @@ jobs:
         working-directory: maiko/linux.x86_64
         run:  |
           ls -alh
+          chmod +x ldex
           Xvnc -geometry 1270x720 :0 & DISPLAY=:0 ldex -g 1280x720 full.sysout
           #Xvfb :99 -screen 0 1024x768x24 > /dev/null 2>&1 &  
           echo "A initial message"
