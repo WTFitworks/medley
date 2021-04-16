@@ -55,8 +55,9 @@ jobs:
         run: ./makeright init
       - name: Install X11 onLinux
         if: ${{ runner.os == 'Linux'}}
+        working-directory: maiko/bin
         run:  |
-          Xvnc -geometry 1270x720 :0 & DISPLAY=:0 /app/ldex -g 1280x720 full.sysout
+          Xvnc -geometry 1270x720 :0 & DISPLAY=:0 /linux.x86_64/ldex -g 1280x720 full.sysout
           #Xvfb :99 -screen 0 1024x768x24 > /dev/null 2>&1 &  
           echo "A initial message"
           export DISPLAY=':99.0'
