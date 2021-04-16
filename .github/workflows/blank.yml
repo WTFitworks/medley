@@ -54,7 +54,7 @@ jobs:
         run: export DISPLAY=':99.0'
       - name: set env
         if: ${{ runner.os == 'macOS'}}
-        run: xterm -geometry 93x31+100+350
+        run: xterm -geometry 1270x720 :0 & DISPLAY=:0
       - name: Build Maiko
         working-directory: maiko/bin
         run: ./makeright x
