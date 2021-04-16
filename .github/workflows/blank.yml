@@ -39,14 +39,6 @@ jobs:
           export DISPLAY=':99.0'
           echo "A initial message"
           Xvfb :99 -screen 0 1024x768x24 > /dev/null 2>&1 &
-      - name: Install X11 onLinux
-        if: ${{ runner.os == 'Linux'}}
-        run:  |
-          Xvnc -geometry 1270x720 :0 & DISPLAY=:0 /app/ldex -g 1280x720 full.sysout
-          #Xvfb :99 -screen 0 1024x768x24 > /dev/null 2>&1 &  
-          echo "A initial message"
-          export DISPLAY=':99.0'
-          echo "A initial message"    
       - name: Show Working directory
         if: ${{ runner.os == 'macOS'}}
         run: ls /Library/LaunchAgents/
@@ -61,6 +53,14 @@ jobs:
       - name: Build Maiko
         working-directory: maiko/bin
         run: ./makeright init
+      - name: Install X11 onLinux
+        if: ${{ runner.os == 'Linux'}}
+        run:  |
+          Xvnc -geometry 1270x720 :0 & DISPLAY=:0 /app/ldex -g 1280x720 full.sysout
+          #Xvfb :99 -screen 0 1024x768x24 > /dev/null 2>&1 &  
+          echo "A initial message"
+          export DISPLAY=':99.0'
+          echo "A initial message"    
       - name: run medley
         working-directory: medley
         run: ./run-medley 
