@@ -50,9 +50,9 @@ jobs:
         if: ${{ runner.os == 'macOS'}}
         run: ls /Library/LaunchAgents/
       - name: Show Working directory
-        run: echo $DISPLAY
+        run: export DISPLAY=':99.0'
       - name: set env
-        if: ${{ runner.os == 'Linux'}}
+        if: ${{ runner.os == 'macOS'}}
         run: xterm -geometry 93x31+100+350
       - name: Build Maiko
         working-directory: maiko/bin
