@@ -35,16 +35,24 @@ jobs:
           echo "A initial message"
           sudo apt-get update
           sudo apt-get install -y xserver-xorg-core openbox xauth xvfb
-           echo "A initial message"
+          echo "A initial message"
           export DISPLAY=':99.0'
-           echo "A initial message"
+          echo "A initial message"
           Xvfb :99 -screen 0 1024x768x24 > /dev/null 2>&1 &
+      - name: Install X11 onLinux
+        if: ${{ runner.os == 'Linux'}}
+        run:  |
+          Xvfb :99 -screen 0 1024x768x24 > /dev/null 2>&1 &  
+          echo "A initial message"
+          export DISPLAY=':99.0'
+          echo "A initial message"    
       - name: Show Working directory
         if: ${{ runner.os == 'macOS'}}
         run: ls /Library/LaunchAgents/
       - name: Show Working directory
         run: echo $DISPLAY
       - name: set env
+        if: ${{ runner.os == 'Linux'}}
         run: xterm -geometry 93x31+100+350
       - name: Build Maiko
         working-directory: maiko/bin
