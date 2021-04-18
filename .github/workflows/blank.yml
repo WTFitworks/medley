@@ -66,8 +66,9 @@ jobs:
           #export DISPLAY=':99.0'
           #echo "A initial message"    
       - name: run medley
+        continue-on-error: true
         working-directory: medley
-        run: Xvfb :1 -screen 0 1440x900x16 &> xvfb.log & ps aux | grep X ; DISPLAY=:1.0 ; export DISPLAY ; timeout 10s ./run-medley; exit 0 
+        run: Xvfb :1 -screen 0 1440x900x16 &> xvfb.log & ps aux | grep X ; DISPLAY=:1.0 ; export DISPLAY ; timeout 10s ./run-medley docker exec -it gracious_jackson  bash -c "Xvfb :1 -screen 0 1440x900x16 &> xvfb.log & ps aux | grep X ; DISPLAY=:1.0 ; export DISPLAY ; timeout 10s ./run-medley; exit 0
  
 
         
