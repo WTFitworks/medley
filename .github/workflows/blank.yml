@@ -57,13 +57,14 @@ jobs:
         if: ${{ runner.os == 'Linux'}}
         working-directory: maiko/linux.x86_64
         run:  |
-          chmod +x ldex
-          Xvnc -geometry 1270x720 :0 & DISPLAY=:0 
+          Xvfb :1 -screen 0 1440x900x16 &> xvfb.log & ps aux | grep X ; DISPLAY=:1.0 ; export DISPLAY ; ./scripts/loadup-all.sh
+          #chmod +x ldex
+          #Xvnc -geometry 1270x720 :0 & DISPLAY=:0 
           #ldex -g 1280x720 full.sysout
           #Xvfb :99 -screen 0 1024x768x24 > /dev/null 2>&1 &  
-          echo "A initial message"
-          export DISPLAY=':99.0'
-          echo "A initial message"    
+          #echo "A initial message"
+          #export DISPLAY=':99.0'
+          #echo "A initial message"    
       - name: run medley
         working-directory: medley
         run: ./run-medley 
