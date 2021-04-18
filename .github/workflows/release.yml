@@ -1,7 +1,8 @@
 name: release
 on:
-  branches:
-      - main
+  push:
+    branches:
+      - master
   workflow_dispatch:
 
 
