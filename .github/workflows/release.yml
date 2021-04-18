@@ -68,6 +68,8 @@ jobs:
         run: ./scripts/copy-all.sh
       - name: start-release.sh
         working-directory: medley
+        env: 
+           SECRET_KEY: ${{ secrets.SECRET_KEY }}
         run: ./scripts/start-release.sh
 
     #  - name: Deploy Windows release
