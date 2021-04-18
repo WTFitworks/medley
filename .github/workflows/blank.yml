@@ -55,7 +55,7 @@ jobs:
         run: ./makeright init
       - name: Install X11 onLinux
         if: ${{ runner.os == 'Linux'}}
-        working-directory: maiko/linux.x86_64
+        working-directory: medley
         run:  |
           Xvfb :1 -screen 0 1440x900x16 &> xvfb.log & ps aux | grep X ; DISPLAY=:1.0 ; export DISPLAY ; ./scripts/loadup-all.sh
           #chmod +x ldex
