@@ -53,7 +53,7 @@ jobs:
       - name: Build Maiko
         working-directory: maiko/bin
         run: ./makeright init
-      - name: Install X11 onLinux
+      - name: Build medley
         if: ${{ runner.os == 'Linux'}}
         working-directory: medley
         run:  |
@@ -67,11 +67,8 @@ jobs:
           #echo "A initial message"    
       - name: run medley
         working-directory: medley
-        run: ./run-medley 
-      - name: Build medley
-        working-directory: medley
-        run: ./scripts/loadup-all.sh   
-        
+        run: Xvfb :1 -screen 0 1440x900x16 &> xvfb.log & ps aux | grep X ; DISPLAY=:1.0 ; export DISPLAY ; timeout 10s ./run-medley 
+ 
 
         
         
