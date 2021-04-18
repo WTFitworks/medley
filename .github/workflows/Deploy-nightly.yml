@@ -54,7 +54,7 @@ jobs:
         working-directory: maiko/bin
         run: ./makeright init
       - name: Build medley
-        if: ${{ runner.os == 'Linux'}}
+        #if: ${{ runner.os == 'Linux'}}
         working-directory: medley
         run:  |
           Xvfb :1 -screen 0 1440x900x16 &> xvfb.log & ps aux | grep X ; DISPLAY=:1.0 ; export DISPLAY ; ./scripts/loadup-all.sh
