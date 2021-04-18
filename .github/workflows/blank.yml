@@ -67,7 +67,7 @@ jobs:
           #echo "A initial message"    
       - name: run medley
         working-directory: medley
-        run: Xvfb :1 -screen 0 1440x900x16 &> xvfb.log & ps aux | grep X ; DISPLAY=:1.0 ; export DISPLAY ; timeout 10s ./run-medley 
+        run: Xvfb :1 -screen 0 1440x900x16 &> xvfb.log & ps aux | grep X ; DISPLAY=:1.0 ; export DISPLAY ; timeout 10s ./run-medley; exit 0 
  
 
         
