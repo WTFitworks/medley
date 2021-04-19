@@ -68,7 +68,7 @@ jobs:
         run: ./scripts/copy-all.sh
       - name: start-release.sh
         working-directory: medley
-        run: sh ./scripts/start-release.sh
+        run: ./scripts/start-release.sh
         env: 
            GH_TOKEN: ${{ secrets.GH_TOKEN }}
 
