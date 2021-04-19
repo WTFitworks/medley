@@ -72,7 +72,7 @@ jobs:
          # DEPLOY: ${{ secrets.DEPLOY }}
         run: sh ./scripts/start-release.sh
         env: 
-          GITHUB_TOKEN: ${{ secrets.DEPLOY }}
+          DEPLOY: ${{ secrets.DEPLOY }}
       #- uses: xresloader/upload-to-github-release@v1
       #  env:
       #   DEPLOY: ${{ secrets.DEPLOY }}
