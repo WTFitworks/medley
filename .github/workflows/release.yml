@@ -24,7 +24,7 @@ jobs:
           
       - uses: actions/checkout@master
         with:
-         repository: masinter/maiko
+         repository:  WTFitworks/medley #masinter/maiko
          path: ./maiko
           
       - name: Install X11 dependencies on MacOS
