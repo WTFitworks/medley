@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 export MEDLEYDIR=`pwd`
 if [ ! -x run-medley ] ; then
     echo run from MEDLEYDIR
