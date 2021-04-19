@@ -28,4 +28,4 @@ cd medley
 
 echo uploading
 
-gh release upload --clobber $tag tmp/maiko-$tag-$osarch.tgz
+#gh release upload --clobber $tag tmp/maiko-$tag-$osarch.tgz
