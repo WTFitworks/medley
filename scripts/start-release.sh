@@ -33,9 +33,9 @@ cd medley
 
 echo making release
 #echo ${{ secrets.DEPLOY }} >> .env
-gh auth login --with-token < ${{ secrets.DEPLOY }}
+#gh auth login --with-token < ${{ secrets.DEPLOY }}
 sed s/'$tag'/$tag/g < release-notes.md > tmp/release-notes.md
-gh release create $tag -F tmp/release-notes.md -p -t $tag
+#gh release create $tag -F tmp/release-notes.md -p -t $tag
 
 echo uploaded tmp/medley-$tag.tgz
 #gh release upload $tag tmp/medley-$tag.tgz --clobber
