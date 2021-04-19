@@ -75,7 +75,7 @@ jobs:
          # DEPLOY: ${{ secrets.DEPLOY }}
       - uses: xresloader/upload-to-github-release@v1
         env:
-         GITHUB_TOKEN: ${{ secrets.DEPLOY }}
+         DEPLOY: ${{ secrets.DEPLOY }}
         with:
            file: "*.md"
            tags: true
