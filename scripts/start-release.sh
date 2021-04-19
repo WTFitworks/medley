@@ -32,7 +32,7 @@ tar cfz medley/tmp/medley-$tag.tgz                        \
 cd medley
 
 echo making release
-gh auth login --with-token < $secrets.GH_TOKEN
+gh auth login --with-token < ${{ secrets.GH_TOKEN }}
 sed s/'$tag'/$tag/g < release-notes.md > tmp/release-notes.md
 gh release create $tag -F tmp/release-notes.md -p -t $tag
 
